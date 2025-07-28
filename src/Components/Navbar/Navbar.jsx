@@ -32,12 +32,12 @@ const Navbar = () => {
                         tabIndex={0}
                         className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
                     >
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/courses">Courses</Link></li>
-                        <li><Link to="/contact">Contact</Link></li>
+                        <li><Link >Home</Link></li>
+                        <li><Link >Courses</Link></li>
+                        <li><Link >Contact</Link></li>
                     </ul>
                 </div>
-                <Link to="/" className="btn btn-ghost normal-case text-xl font-bold text-indigo-600">
+                <Link to="/dashboard" className="btn btn-ghost normal-case text-xl font-bold text-indigo-600">
                     Civil Laws
                 </Link>
             </div>

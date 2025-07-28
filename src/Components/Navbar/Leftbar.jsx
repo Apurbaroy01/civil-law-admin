@@ -8,7 +8,7 @@ const Leftbar = () => {
             <ul className="space-y-2">
                 <li>
                     <NavLink
-                        to="/"
+                        to="/dashboards"
                         className={({ isActive }) =>
                             isActive
                                 ? "flex items-center gap-2 text-white bg-indigo-500 px-4 py-2 rounded"
@@ -20,7 +20,7 @@ const Leftbar = () => {
                 </li>
                 <li>
                     <NavLink
-                        to="/student"
+                        to="/dashboard/student"
                         className={({ isActive }) =>
                             isActive
                                 ? "flex items-center gap-2 text-white bg-indigo-500 px-4 py-2 rounded"
@@ -40,6 +40,18 @@ const Leftbar = () => {
                         }
                     >
                         <FaBookOpen /> Courses
+                    </NavLink>
+                </li>
+                <li>
+                    <NavLink
+                        to="/dashboard/result"
+                        className={({ isActive }) =>
+                            isActive
+                                ? "flex items-center gap-2 text-white bg-indigo-500 px-4 py-2 rounded"
+                                : "flex items-center gap-2 text-gray-700 hover:bg-gray-100 px-4 py-2 rounded"
+                        }
+                    >
+                        <FaBookOpen /> Result
                     </NavLink>
                 </li>
                 

@@ -2,8 +2,8 @@ import { Outlet } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import Leftbar from "../Navbar/Leftbar";
 
-
 const Dashboard = () => {
+   
     return (
         <div>
             <div>

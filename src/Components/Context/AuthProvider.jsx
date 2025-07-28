@@ -26,6 +26,7 @@ const AuthProvider = ({ children }) => {
     }, []);
 
     const Logout=()=>{
+        setLoading(true)
       return signOut(auth)
     }
 
