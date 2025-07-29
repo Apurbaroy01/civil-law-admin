@@ -9,7 +9,7 @@ const Leftbar = () => {
             <ul className="space-y-2">
                 <li>
                     <NavLink
-                        to="/dashboards"
+                        to="/dashboard/home"
                         className={({ isActive }) =>
                             isActive
                                 ? "flex items-center gap-2 text-white bg-indigo-500 px-4 py-2 rounded"

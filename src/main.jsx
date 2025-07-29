@@ -14,6 +14,7 @@ import Student from './Components/DashBoard/Student/Student';
 import StudentView from './Components/DashBoard/Student/StudentView';
 import Result from './Components/Result/Result';
 import Courses from './Components/Coueses/Courses';
+import Home from './Components/Home/Home';
 
 const router = createBrowserRouter([
   {
@@ -60,6 +61,11 @@ const router = createBrowserRouter([
         path: "courses",
         element: <Courses></Courses>,
         loader:()=> fetch('http://localhost:5000/student')
+      },
+      {
+        path: "home",
+        element: <Home></Home>,
+        
       },
     ]
   }

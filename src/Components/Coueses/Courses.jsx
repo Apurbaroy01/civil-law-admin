@@ -108,23 +108,23 @@ const Courses = () => {
                                 </tr>
                             </thead>
                             <tbody>
-    {students.map((student, index) => (
-        <tr key={student.id || index} className="hover:bg-blue-50">
-            <th>{index + 1}</th>
-            <td>{student.name}</td>
-            <td>{student.email}</td>
-            <td>{student.year}</td>
-            <td>{student.month}</td>
-            <td>
-                <button
-                    className="flex items-center justify-center gap-1 px-3 py-2 text-sm bg-green-300 text-black rounded hover:bg-green-600 transition"
-                >
-                    <MdDeleteForever className="text-lg" />
-                </button>
-            </td>
-        </tr>
-    ))}
-</tbody>
+                                {students.map((student, index) => (
+                                    <tr key={student.id || index} className="hover:bg-blue-50">
+                                        <th>{index + 1}</th>
+                                        <td>{student.name}</td>
+                                        <td>{student.email}</td>
+                                        <td>{student.year}</td>
+                                        <td>{student.month}</td>
+                                        <td>
+                                            <button
+                                                className="flex items-center justify-center gap-1 px-3 py-2 text-sm bg-green-300 text-black rounded hover:bg-green-600 transition"
+                                            >
+                                                <MdDeleteForever className="text-lg" />
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
                         </table>
                     </div>
                 ) : (
