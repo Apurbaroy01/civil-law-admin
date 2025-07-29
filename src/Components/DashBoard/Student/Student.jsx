@@ -1,4 +1,5 @@
 // import { useState } from "react";
+import { FaEdit, FaEye } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
 
 
@@ -9,7 +10,7 @@ const Student = () => {
 
 
     return (
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto bg-gradient-to-br from-blue-100 via-white to-purple-100 py-5 px-4 md:px-10 min-h-screen">
             <div className="flex flex-col sm:flex-row items-center justify-between mb-6 gap-4">
                 <h2 className="text-2xl font-bold text-gray-700">
                     🧑‍🎓 Student All Details
@@ -55,19 +56,15 @@ const Student = () => {
                                     <div className="flex justify-end space-x-2">
                                         <Link to={`/dashboard/student/${data._id}`}>
                                             <button className="px-4 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 transition">
-                                                View
+                                                <FaEye /> 
                                             </button>
 
                                         </Link>
                                         <button className="px-4 py-1 text-sm bg-green-500 text-white rounded hover:bg-green-600 transition">
-                                            Edit
+                                            <FaEdit />
                                         </button>
-                                        <button className="px-4 py-1 text-sm bg-green-500 text-white rounded hover:bg-green-600 transition">
-                                            Mark
-                                        </button>
-                                        <button className="px-4 py-1 text-sm bg-green-500 text-white rounded hover:bg-green-600 transition">
-                                            Del
-                                        </button>
+                                        
+                                        
                                     </div>
                                 </td>
                             </tr>

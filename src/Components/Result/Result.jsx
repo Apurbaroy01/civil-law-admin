@@ -1,7 +1,9 @@
 
+import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 const Result = () => {
+    const [successMap, setSuccessMap] = useState({}); // track success per student
     const studentDta = useLoaderData();
     // console.log(studentDta);
 
@@ -27,12 +29,22 @@ const Result = () => {
             body: JSON.stringify(result)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount > 0 || data.acknowledged) {
+                    setSuccessMap(prev => ({ ...prev, [id]: true }));
+                    setTimeout(() => {
+                        setSuccessMap(prev => ({ ...prev, [id]: false }));
+                    }, 3000); // success message disappears after 3s
+                }
+
+            })
+
 
     };
 
     return (
-        <div className="p-6">
+        <div className="p-6 bg-gradient-to-br from-blue-100 via-white to-purple-100 py-5 px-4 md:px-10 min-h-screen">
             <div className="flex flex-col sm:flex-row items-center justify-between mb-6 gap-4">
                 <h2 className="text-2xl font-bold text-gray-700">
                     📋 Student Exam Result Entry
@@ -90,9 +102,10 @@ const Result = () => {
                                                 className="input input-bordered input-sm w-full" />
                                             <input name="exam5" type="text" placeholder='Exam-5' defaultValue={data.exam5}
                                                 className="input input-bordered input-sm w-full" />
-                                            <button type="submit" className="btn btn-sm btn-primary w-full">
-                                                Save
-                                            </button>
+
+                                            {successMap[data._id] ? <span className="text-green-600 font-medium text-sm">✅ Done</span>
+                                                : <button type="submit" className="btn btn-sm btn-primary w-full">Save</button>
+                                            }
                                         </form>
 
                                     </td>

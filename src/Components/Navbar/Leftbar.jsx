@@ -33,7 +33,7 @@ const Leftbar = () => {
                 </li>
                 <li>
                     <NavLink
-                        to="/courses"
+                        to="/dashboard/courses"
                         className={({ isActive }) =>
                             isActive
                                 ? "flex items-center gap-2 text-white bg-indigo-500 px-4 py-2 rounded"

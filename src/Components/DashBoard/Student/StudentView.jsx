@@ -33,9 +33,9 @@ const StudentView = () => {
       },
       {
         code: "",
-        name: "Total Number",
-        ct: "=",
-        qt: exam5,
+        name: "",
+        ct: "Total Number",
+        qt:"=", exam5,
       },
     ],
   };

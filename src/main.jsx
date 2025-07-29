@@ -13,6 +13,7 @@ import PrivateRoute from './Components/PrivetRoute/PrivetRoute';
 import Student from './Components/DashBoard/Student/Student';
 import StudentView from './Components/DashBoard/Student/StudentView';
 import Result from './Components/Result/Result';
+import Courses from './Components/Coueses/Courses';
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,11 @@ const router = createBrowserRouter([
       {
         path: "result",
         element: <Result></Result>,
+        loader:()=> fetch('http://localhost:5000/student')
+      },
+      {
+        path: "courses",
+        element: <Courses></Courses>,
         loader:()=> fetch('http://localhost:5000/student')
       },
     ]

@@ -18,6 +18,7 @@ const Navbar = () => {
                 console.error(error.message);
             });
     };
+    
 
     return (
         <div className="navbar bg-white text-gray-800 shadow-md px-4 lg:px-10 sticky top-0 z-50">
