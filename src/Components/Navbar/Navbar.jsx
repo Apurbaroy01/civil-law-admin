@@ -38,7 +38,7 @@ const Navbar = () => {
                         <li><Link >Contact</Link></li>
                     </ul>
                 </div>
-                <Link to="/dashboard" className="btn btn-ghost normal-case text-xl font-bold text-indigo-600">
+                <Link to="/dashboard/home" className="btn btn-ghost normal-case text-xl font-bold text-indigo-600">
                     Civil Laws
                 </Link>
             </div>
