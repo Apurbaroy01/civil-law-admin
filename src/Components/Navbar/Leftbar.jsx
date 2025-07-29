@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { FaUserGraduate, FaBookOpen, FaHome } from "react-icons/fa";
+import { IoIosPaper } from "react-icons/io";
 
 const Leftbar = () => {
     return (
@@ -51,7 +52,7 @@ const Leftbar = () => {
                                 : "flex items-center gap-2 text-gray-700 hover:bg-gray-100 px-4 py-2 rounded"
                         }
                     >
-                        <FaBookOpen /> Result
+                        <IoIosPaper /> Result
                     </NavLink>
                 </li>
                 

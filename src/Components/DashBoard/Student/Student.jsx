@@ -10,6 +10,29 @@ const Student = () => {
 
     return (
         <div className="overflow-x-auto">
+            <div className="flex flex-col sm:flex-row items-center justify-between mb-6 gap-4">
+                <h2 className="text-2xl font-bold text-gray-700">
+                    🧑‍🎓 Student All Details
+                </h2>
+                <label className="relative w-full sm:w-64">
+                    <input
+                        type="search"
+                        placeholder="Search by name or roll"
+                        className="w-full border border-gray-300 rounded-full py-2 pl-10 pr-4 text-sm shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    />
+                    <svg
+                        className="w-5 h-5 absolute left-3 top-2.5 text-gray-400"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                    >
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="M21 21l-4.35-4.35" />
+                    </svg>
+                </label>
+            </div>
             <table className="table">
                 {/* head */}
                 <thead>
@@ -51,7 +74,7 @@ const Student = () => {
 
                         )
                     }
-                    
+
                 </tbody>
             </table>
         </div>

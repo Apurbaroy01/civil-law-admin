@@ -2,46 +2,40 @@ import { useLoaderData } from "react-router-dom";
 
 const StudentView = () => {
     const students=useLoaderData()
-  const {name, email, address, university,year,roll,month}=students
+  const {name, email, address, university,year,roll,month,exam1,exam2,exam3,exam4,exam5}=students
   console.log(students)
   const student = {
     
     subjects: [
       {
-        code: "28572",
-        name: "Network Administration & Services",
+        code: "",
+        name: "Limitaion Act",
         ct: 1,
-        qt: 0,
+        qt: exam1,
       },
       {
-        code: "28573",
-        name: "Cyber Security & Ethics",
+        code: "",
+        name: "Specific Reilef Act",
         ct: 2,
-        qt: 0,
+        qt: exam2,
       },
       {
-        code: "28575",
-        name: "Multimedia & Animation",
+        code: "",
+        name: "The Code of Civil Procedure",
         ct: 3,
-        qt: 0,
+        qt: exam3,
       },
       {
-        code: "25853",
-        name: "Innovation & Entrepreneurship",
+        code: "",
+        name: "Full model Test on Civil Law",
         ct: 4,
-        qt: 0,
+        qt: exam4,
       },
       {
-        code: "28574",
-        name: "Apps Development Project",
-        ct: 5,
-        qt: 0,
-      },
-      {
-        code: "28571",
-        name: "Digital Marketing Technique",
-        ct: 6,
-        qt: 0,
+        code: "",
+        name: "Total Number",
+        ct: "=",
+        qt: exam5,
       },
     ],
   };
