@@ -22,7 +22,7 @@ const Result = () => {
 
 
         fetch(`http://localhost:5000/student/${id}`, {
-            method: 'PUT',
+            method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
             },
@@ -100,7 +100,7 @@ const Result = () => {
                                                 className="input input-bordered input-sm w-full" />
                                             <input name="exam4" type="text" placeholder='Exam-4' defaultValue={data.exam4}
                                                 className="input input-bordered input-sm w-full" />
-                                            <input name="exam5" type="text" placeholder='Exam-5' defaultValue={data.exam5}
+                                            <input name="exam5" type="text" placeholder='total' defaultValue={data.exam5}
                                                 className="input input-bordered input-sm w-full" />
 
                                             {successMap[data._id] ? <span className="text-green-600 font-medium text-sm">✅ Done</span>

@@ -15,6 +15,7 @@ import StudentView from './Components/DashBoard/Student/StudentView';
 import Result from './Components/Result/Result';
 import Courses from './Components/Coueses/Courses';
 import Home from './Components/Home/Home';
+import StudentEdit from './Components/DashBoard/Student/StudentEdit';
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,12 @@ const router = createBrowserRouter([
       {
         path: "home",
         element: <Home></Home>,
+        
+      },
+      {
+        path: "studentEdit/:id",
+        element: <StudentEdit></StudentEdit>,
+        loader: ({ params }) => fetch(`http://localhost:5000/student/${params.id}`)
         
       },
     ]

@@ -10,32 +10,32 @@ const StudentView = () => {
       {
         code: "",
         name: "Limitaion Act",
-        ct: 1,
+        ct: "Exam-1",
         qt: exam1,
       },
       {
         code: "",
         name: "Specific Reilef Act",
-        ct: 2,
+        ct: "Exam-2",
         qt: exam2,
       },
       {
         code: "",
         name: "The Code of Civil Procedure",
-        ct: 3,
+        ct: "Exam-3",
         qt: exam3,
       },
       {
         code: "",
         name: "Full model Test on Civil Law",
-        ct: 4,
+        ct: "Exam-4",
         qt: exam4,
       },
       {
         code: "",
         name: "",
-        ct: "Total Number",
-        qt:"=", exam5,
+        ct: "Total Number =",
+        qt: exam5,
       },
     ],
   };

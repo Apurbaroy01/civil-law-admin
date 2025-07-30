@@ -3,16 +3,16 @@ import { useContext } from "react";
 import AuthContext from "../Context/AuthContext";
 
 const PrivateRoute = ({ children }) => {
-    const { user,loading} = useContext(AuthContext);
+    const { user} = useContext(AuthContext);
     // const location = useLocation();
 
-    if (loading) {
-        return (
-            <div className="flex justify-center items-center h-screen">
-                <span className="loading loading-spinner text-indigo-500 loading-lg"></span>
-            </div>
-        );
-    }
+    // if (loading) {
+    //     return (
+    //         <div className="flex justify-center items-center h-screen">
+    //             <span className="loading loading-spinner text-indigo-500 loading-lg"></span>
+    //         </div>
+    //     );
+    // }
     
     if (user) {
         return children;

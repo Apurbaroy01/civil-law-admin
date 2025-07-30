@@ -56,15 +56,17 @@ const Student = () => {
                                     <div className="flex justify-end space-x-2">
                                         <Link to={`/dashboard/student/${data._id}`}>
                                             <button className="px-4 py-1 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 transition">
-                                                <FaEye /> 
+                                                <FaEye />
                                             </button>
 
                                         </Link>
-                                        <button className="px-4 py-1 text-sm bg-green-500 text-white rounded hover:bg-green-600 transition">
-                                            <FaEdit />
-                                        </button>
-                                        
-                                        
+                                        <Link to={`/dashboard/studentEdit/${data._id}`}>
+                                            <button className="px-4 py-1 text-sm bg-green-500 text-white rounded hover:bg-green-600 transition">
+                                                <FaEdit />
+                                            </button>
+                                        </Link>
+
+
                                     </div>
                                 </td>
                             </tr>

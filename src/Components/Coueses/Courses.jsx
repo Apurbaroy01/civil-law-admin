@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MdDeleteForever } from "react-icons/md";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Courses = () => {
     const studentData = useLoaderData();
@@ -22,6 +23,39 @@ const Courses = () => {
 
         setStudents(filtered);
     };
+    const handleDelete = (_id) => {
+        console.log("delete id:", _id)
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/student/${_id}`, {
+                    method: "DELETE",
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                        }
+
+                    })
+            }
+        });
+
+
+    }
 
     return (
         <div className="bg-gradient-to-br from-blue-100 via-white to-purple-100 py-5 px-4 md:px-10 min-h-screen">
@@ -109,14 +143,14 @@ const Courses = () => {
                             </thead>
                             <tbody>
                                 {students.map((student, index) => (
-                                    <tr key={student.id || index} className="hover:bg-blue-50">
+                                    <tr key={student._id || index} className="hover:bg-blue-50">
                                         <th>{index + 1}</th>
                                         <td>{student.name}</td>
                                         <td>{student.email}</td>
                                         <td>{student.year}</td>
                                         <td>{student.month}</td>
                                         <td>
-                                            <button
+                                            <button onClick={() => handleDelete(student._id)}
                                                 className="flex items-center justify-center gap-1 px-3 py-2 text-sm bg-green-300 text-black rounded hover:bg-green-600 transition"
                                             >
                                                 <MdDeleteForever className="text-lg" />
