@@ -66,6 +66,7 @@ const router = createBrowserRouter([
       {
         path: "home",
         element: <Home></Home>,
+        loader:()=> fetch('http://localhost:5000/student')
         
       },
       {

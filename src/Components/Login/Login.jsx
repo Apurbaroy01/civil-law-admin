@@ -2,10 +2,10 @@ import { useContext, useState } from "react";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 import AuthContext from "../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { RotatingLines } from 'react-loader-spinner'; // ✅ better spinner
+import { RotatingLines } from 'react-loader-spinner';
 
 const Login = () => {
-    const [icon, setIcon] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
     const [loading, setLoading] = useState(false);
     const { signIn } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -21,7 +21,7 @@ const Login = () => {
         signIn(email, password)
             .then((result) => {
                 console.log(result.user);
-                navigate('/dashboard/home');
+                navigate("/dashboard/home");
             })
             .catch((error) => {
                 console.log(error.message);
@@ -30,54 +30,70 @@ const Login = () => {
     };
 
     return (
-        <div className="hero bg-base-200 min-h-screen">
-            <div className="hero-content flex-col lg:flex-row-reverse">
-                <div className="text-center lg:text-left">
-                    <h1 className="text-5xl font-bold">Login now!</h1>
-                </div>
-                <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                    <div className="card-body">
-                        <h1 className="text-5xl font-bold text-center">Login now!</h1>
-                        <form onSubmit={handleSignIn}>
-                            <fieldset className="fieldset">
-                                <label className="label">Email</label>
-                                <input type="email" className="input input-bordered w-full" placeholder="Email" name="email" required />
-                                <label className="label">Password</label>
-                                <div className="relative">
-                                    <input
-                                        type={icon ? 'text' : 'password'}
-                                        className="input input-bordered w-full"
-                                        placeholder="Password"
-                                        name="password"
-                                        required
-                                    />
-                                    <span
-                                        onClick={() => setIcon(!icon)}
-                                        className="absolute top-3 right-4 cursor-pointer text-xl"
-                                    >
-                                        {icon ? <IoIosEye /> : <IoIosEyeOff />}
-                                    </span>
-                                </div>
-                                <div><a className="link link-hover text-sm">Forgot password?</a></div>
-                                <button type="submit" className="btn btn-neutral mt-4 w-full flex justify-center items-center">
-                                    {loading ? (
-                                        <RotatingLines
-                                            visible={true}
-                                            height="24"
-                                            width="24"
-                                            color="white"
-                                            strokeWidth="5"
-                                            animationDuration="0.75"
-                                            ariaLabel="rotating-lines-loading"
-                                        />
-                                    ) : (
-                                        'Login'
-                                    )}
-                                </button>
-                            </fieldset>
-                        </form>
+        <div className="min-h-screen bg-gradient-to-br from-blue-100 via-white to-blue-200 flex items-center justify-center px-4">
+            <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8">
+                <h2 className="text-3xl font-bold text-center mb-6 text-gray-800">Welcome Back</h2>
+                <form onSubmit={handleSignIn} className="space-y-4">
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700">Email</label>
+                        <input
+                            type="email"
+                            name="email"
+                            required
+                            placeholder="Enter your email"
+                            className="mt-1 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+                        />
                     </div>
-                </div>
+
+                    <div>
+                        <label className="block text-sm font-medium text-gray-700">Password</label>
+                        <div className="relative">
+                            <input
+                                type={showPassword ? "text" : "password"}
+                                name="password"
+                                required
+                                placeholder="Enter your password"
+                                className="mt-1 w-full px-4 py-2 border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+                            />
+                            <span
+                                onClick={() => setShowPassword(!showPassword)}
+                                className="absolute top-3 right-4 text-xl text-gray-600 cursor-pointer"
+                            >
+                                {showPassword ? <IoIosEye /> : <IoIosEyeOff />}
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className="flex justify-between text-sm text-blue-500 mt-1">
+                        <a href="#" className="hover:underline">Forgot password?</a>
+                    </div>
+
+                    <button
+                        type="submit"
+                        className="w-full bg-blue-600 text-white font-semibold py-2 rounded-xl hover:bg-blue-700 transition flex justify-center items-center"
+                    >
+                        {loading ? (
+                            <RotatingLines
+                                visible={true}
+                                height="24"
+                                width="24"
+                                color="white"
+                                strokeWidth="5"
+                                animationDuration="0.75"
+                                ariaLabel="rotating-lines-loading"
+                            />
+                        ) : (
+                            "Login"
+                        )}
+                    </button>
+                </form>
+
+                <p className="mt-6 text-sm text-center text-gray-600">
+                    Don't have an account?{" "}
+                    <a href="/register" className="text-blue-500 hover:underline font-medium">
+                        Sign up
+                    </a>
+                </p>
             </div>
         </div>
     );
