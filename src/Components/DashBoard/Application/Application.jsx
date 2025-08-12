@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Application = () => {
     const [applications, setApplications] = useState([]);
@@ -31,7 +32,7 @@ const Application = () => {
                     {/* row 1 */}
                     {
                         applications.map((application, index) =>
-                            <tr className="hover:bg-base-300 transition-colors duration-200">
+                            <tr key={index} className="hover:bg-base-300 transition-colors duration-200">
 
                                 <th>{index + 1}</th>
                                 <td>
@@ -47,7 +48,7 @@ const Application = () => {
                                     {application.email}
                                     <br />
                                     <span className="badge badge-outline badge-sm mt-1">
-                                        12 Aug 2025
+                                        {application.date}
                                     </span>
                                 </td>
                                 <td>
@@ -56,9 +57,9 @@ const Application = () => {
                                     </span>
                                 </td>
                                 <td className="text-center">
-                                    <button className="btn btn-sm btn-primary rounded-lg">
-                                        Details
-                                    </button>
+                                    <Link to={`/dashboard/admitiondetails/${application._id}`} className="btn btn-primary btn-sm">
+                                        View Details
+                                    </Link>
                                 </td>
                             </tr>
                         )

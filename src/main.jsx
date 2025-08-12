@@ -17,6 +17,7 @@ import Courses from './Components/Coueses/Courses';
 import Home from './Components/Home/Home';
 import StudentEdit from './Components/DashBoard/Student/StudentEdit';
 import Application from './Components/DashBoard/Application/Application';
+import AdmitionDetails from './Components/DashBoard/Application/AdmitionDetails';
 
 const router = createBrowserRouter([
   {
@@ -57,30 +58,33 @@ const router = createBrowserRouter([
       {
         path: "result",
         element: <Result></Result>,
-        loader:()=> fetch('https://law-server-vert.vercel.app/student')
+        loader: () => fetch('https://law-server-vert.vercel.app/student')
       },
       {
         path: "courses",
         element: <Courses></Courses>,
-        loader:()=> fetch('https://law-server-vert.vercel.app/student')
+        loader: () => fetch('https://law-server-vert.vercel.app/student')
       },
       {
         path: "home",
         element: <Home></Home>,
-        loader:()=> fetch('https://law-server-vert.vercel.app/student')
-        
+        loader: () => fetch('https://law-server-vert.vercel.app/student')
+
       },
       {
         path: "studentEdit/:id",
         element: <StudentEdit></StudentEdit>,
         loader: ({ params }) => fetch(`https://law-server-vert.vercel.app/student/${params.id}`)
-        
+
       },
       {
         path: "application",
         element: <Application></Application>
-        // loader: ({ params }) => fetch(`https://law-server-vert.vercel.app/student/${params.id}`)
-        
+      },
+      {
+        path: "admitiondetails/:id",
+        element: <AdmitionDetails></AdmitionDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/admination/${params.id}`)
       },
     ]
   }
