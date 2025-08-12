@@ -33,7 +33,7 @@ const Result = () => {
         const id = student._id || student.roll;
         const result = { exam1, exam2, exam3, exam4, exam5, id };
 
-        fetch(`http://localhost:5000/student/${id}`, {
+        fetch(`https://law-server-vert.vercel.app/student/${id}`, {
             method: 'PATCH',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(result)

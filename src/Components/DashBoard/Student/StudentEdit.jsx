@@ -21,7 +21,7 @@ const StudentEdit = () => {
         console.log("updata data",data)
 
 
-        fetch(`http://localhost:5000/student/${loadingdata._id}`, {
+        fetch(`https://law-server-vert.vercel.app/student/${loadingdata._id}`, {
             method: "PUT",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)

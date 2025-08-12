@@ -16,6 +16,7 @@ import Result from './Components/Result/Result';
 import Courses from './Components/Coueses/Courses';
 import Home from './Components/Home/Home';
 import StudentEdit from './Components/DashBoard/Student/StudentEdit';
+import Application from './Components/DashBoard/Application/Application';
 
 const router = createBrowserRouter([
   {
@@ -46,33 +47,39 @@ const router = createBrowserRouter([
       {
         path: "student",
         element: <Student></Student>,
-        loader: () => fetch('http://localhost:5000/student')
+        loader: () => fetch('https://law-server-vert.vercel.app/student')
       },
       {
         path: "student/:id",
         element: <StudentView></StudentView>,
-        loader: ({ params }) => fetch(`http://localhost:5000/student/${params.id}`)
+        loader: ({ params }) => fetch(`https://law-server-vert.vercel.app/student/${params.id}`)
       },
       {
         path: "result",
         element: <Result></Result>,
-        loader:()=> fetch('http://localhost:5000/student')
+        loader:()=> fetch('https://law-server-vert.vercel.app/student')
       },
       {
         path: "courses",
         element: <Courses></Courses>,
-        loader:()=> fetch('http://localhost:5000/student')
+        loader:()=> fetch('https://law-server-vert.vercel.app/student')
       },
       {
         path: "home",
         element: <Home></Home>,
-        loader:()=> fetch('http://localhost:5000/student')
+        loader:()=> fetch('https://law-server-vert.vercel.app/student')
         
       },
       {
         path: "studentEdit/:id",
         element: <StudentEdit></StudentEdit>,
-        loader: ({ params }) => fetch(`http://localhost:5000/student/${params.id}`)
+        loader: ({ params }) => fetch(`https://law-server-vert.vercel.app/student/${params.id}`)
+        
+      },
+      {
+        path: "application",
+        element: <Application></Application>
+        // loader: ({ params }) => fetch(`https://law-server-vert.vercel.app/student/${params.id}`)
         
       },
     ]
